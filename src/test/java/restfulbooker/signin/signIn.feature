@@ -5,4 +5,4 @@ Feature: Create Booking
   Background:
     * url baseUrl
 
-    Scenario:
+    Scenario: Sign In
