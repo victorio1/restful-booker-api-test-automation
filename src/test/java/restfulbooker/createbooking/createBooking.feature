@@ -4,21 +4,23 @@ Feature: Create Booking
 
   Background:
     * url baseUrl
+    * header Accept = 'application/json'
 
   Scenario: Creacion de 1 reserva con todos los datos correctos
     Given path '/booking'
     And request
     """
-      {
-      "firstname" : "Eduardo",
-      "lastname" : "Victorio",
-      "totalprice" : 120,
+   {
+      "firstname" : "Jim",
+      "lastname" : "Brown",
+      "totalprice" : 111,
       "depositpaid" : true,
       "bookingdates" : {
-          "checkin" : "2018-02-03",
-          "checkout" : "2019-03-02"
-      }
-    }
+          "checkin" : "2018-01-01",
+          "checkout" : "2019-01-01"
+      },
+      "additionalneeds" : "Breakfast"
+  }
     """
     When method POST
     Then status 200

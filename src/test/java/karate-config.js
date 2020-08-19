@@ -4,7 +4,7 @@ function fn() {
      karate.configure('logPrettyResponse', true);
 
      var config = {
-         baseUrl : 'http://restful-booker.herokuapp.com'
+         baseUrl : 'https://restful-booker.herokuapp.com'
      }
 
      return config;
