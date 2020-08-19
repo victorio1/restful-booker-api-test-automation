@@ -17,7 +17,7 @@ public class TestRunner {
     @Test
     public void TestRunner() {
         System.setProperty("karate.env", "demo"); // ensure reset if other tests (e.g. mock) had set env in CI
-        Results results = Runner.path("classpath:smartpyme").tags("~@ignore").parallel(1);
+        Results results = Runner.path("classpath:restfulbooker").tags("~@ignore").parallel(1);
         generateReport(results.getReportDir());
     }
 

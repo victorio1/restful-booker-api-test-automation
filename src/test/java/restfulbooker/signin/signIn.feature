@@ -4,5 +4,16 @@ Feature: Create Booking
 
   Background:
     * url baseUrl
+    * header Accept = 'application/json'
 
-    Scenario: Sign In
+    Scenario: Inicio de Sesion con UserName y Password correctos
+      Given path '/auth'
+      And request
+      """
+        {
+          "username" : "admin",
+          "password" : "password123"
+        }
+      """
+      When method POST
+      Then status 200
