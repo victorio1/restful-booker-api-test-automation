@@ -8,6 +8,7 @@ Feature: Listado de todas las reservas
     * url baseUrl
     * header Accept = 'application/json'
 
+  @HappyPath
   Scenario: Listado de 1 reserva recientemente creada
     * def CreateBookingResponse = call read('classpath:common/createBooking.feature')
     * def bookingId = CreateBookingResponse.response.bookingid

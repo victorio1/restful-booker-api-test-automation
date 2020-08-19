@@ -6,6 +6,7 @@ Feature: Create Booking
     * url baseUrl
     * header Accept = 'application/json'
 
+    @HappyPath
     Scenario: Inicio de Sesion con UserName y Password correctos
       Given path '/auth'
       And request

@@ -6,6 +6,7 @@ Feature: Listado de todas las reservas
     * url baseUrl
     * header Accept = 'application/json'
 
+    @HappyPath
     Scenario: Listado de todos los codigos Id
       Given path '/booking'
       When method GET

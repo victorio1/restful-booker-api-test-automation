@@ -6,6 +6,7 @@ Feature: Creacion de una reserva
     * url baseUrl
     * header Accept = 'application/json'
 
+  @HappyPath
   Scenario: Creacion de 1 reserva con todos los datos correctos
     Given path '/booking'
     And request
