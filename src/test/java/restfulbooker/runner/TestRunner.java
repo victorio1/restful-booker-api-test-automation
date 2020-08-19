@@ -17,7 +17,7 @@ public class TestRunner {
     @Test
     public void TestRunner() {
         System.setProperty("karate.env", "demo"); // ensure reset if other tests (e.g. mock) had set env in CI
-        Results results = Runner.path("classpath:smartpyme").tags("~@ignore").parallel(1);
+        Results results = Runner.path("classpath:restfulbooker").tags("~@ignore").parallel(1);
         generateReport(results.getReportDir());
     }
 
@@ -26,7 +26,7 @@ public class TestRunner {
         Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
         List<String> jsonPaths = new ArrayList(jsonFiles.size());
         jsonFiles.forEach(file -> jsonPaths.add(file.getAbsolutePath()));
-        Configuration config = new Configuration(new File("target"), "SmartPyme");
+        Configuration config = new Configuration(new File("target"), "RestfulBooker");
         ReportBuilder reportBuilder = new ReportBuilder(jsonPaths, config);
         reportBuilder.generateReports();
     }
