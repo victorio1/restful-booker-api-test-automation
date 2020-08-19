@@ -7,7 +7,7 @@ Feature: Listado de todas las reservas
     * header Accept = 'application/json'
 
     @HappyPath
-    Scenario: Listado de todos los codigos Id
+    Scenario: Listado de todos las reservas por codigos Id
       Given path '/booking'
       When method GET
       Then status 200
