@@ -7,5 +7,8 @@ function fn() {
          baseUrl : 'https://restful-booker.herokuapp.com'
      }
 
+//     var accessToken = karate.callSingle('classpath:common/signIn.feature', config).authToken
+//     karate.configure('headers', {cookie: 'token=' + accessToken})
+
      return config;
  }

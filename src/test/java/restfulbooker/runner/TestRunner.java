@@ -12,15 +12,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class TestRunner {
+public class TestRunner{
 
     @Test
-    public void TestRunner() {
+    public void TestRunner(){
         System.setProperty("karate.env", "demo"); // ensure reset if other tests (e.g. mock) had set env in CI
         Results results = Runner.path("classpath:restfulbooker").tags("~@ignore").parallel(1);
         generateReport(results.getReportDir());
     }
-
 
     public static void generateReport(String karateOutputPath) {
         Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
