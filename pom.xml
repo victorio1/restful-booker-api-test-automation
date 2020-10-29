@@ -8,17 +8,22 @@
     <artifactId>restful-booker-api-test-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <gatling.plugin.version>3.1.0</gatling.plugin.version>
+        <karate.version>0.9.5</karate.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-apache</artifactId>
-            <version>0.9.5</version>
+            <version>${karate.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit4</artifactId>
-            <version>0.9.5</version>
+            <version>${karate.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -55,6 +60,12 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-gatling</artifactId>
+            <version>${karate.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -69,6 +80,15 @@
                 <configuration>
                     <source>8</source>
                     <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.gatling</groupId>
+                <artifactId>gatling-maven-plugin</artifactId>
+                <version>${gatling.plugin.version}</version>
+                <configuration>
+                    <simulationsFolder>src/test/java/restfulbooker/performance</simulationsFolder>
+                    <configFolder>src/test/java/restfulbooker/performance/data</configFolder>
                 </configuration>
             </plugin>
         </plugins>
