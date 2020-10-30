@@ -7,7 +7,6 @@
     <groupId>org.example</groupId>
     <artifactId>restful-booker-api-test-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <properties>
         <gatling.plugin.version>3.1.0</gatling.plugin.version>
         <karate.version>0.9.5</karate.version>
